@@ -1,10 +1,10 @@
 Name: libbltscommon1
 Summary: Common BLTS functions
-Version: 0.4.5
+Version: 0.4.6
 Release: 1
 License: GPLv2
 Group: Development/Testing
-URL: https://github.com/mer-packages/mcts-blts
+URL: https://github.com/mer-qa/blts-common
 Source0: %{name}-%{version}.tar.gz
 BuildRequires: flex
 BuildRequires: bison
