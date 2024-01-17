@@ -1,6 +1,6 @@
 Name: libbltscommon1
 Summary: Common BLTS functions
-Version: 0.4.7
+Version: 0.4.8
 Release: 1
 License: GPLv2
 URL: https://github.com/mer-qa/blts-common
