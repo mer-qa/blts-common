@@ -22,6 +22,7 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#include <libxml/parser.h>
 #include <libxml/xmlwriter.h>
 
 #include "blts_results_xml.h"
