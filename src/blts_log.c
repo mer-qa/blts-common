@@ -79,7 +79,7 @@ int blts_log_open(const char *filename, unsigned int flags)
 		log_file = fopen("/dev/null","a");
 	else {
 		if (*filename == '/')
-			asprintf(&path_and_file, "%s", filename);
+			n = asprintf(&path_and_file, "%s", filename);
 		else {
 			real_filename = basename(filename);
 

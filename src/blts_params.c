@@ -66,11 +66,13 @@ static int __boxed_value_can_cast(int type, int new_type)
 			|| type == CONFIG_PARAM_LONG
 			|| type == CONFIG_PARAM_BOOL)
 			return 1;
+		break;
 	case CONFIG_PARAM_FLOAT:
 	case CONFIG_PARAM_DOUBLE:
 		if (type == CONFIG_PARAM_FLOAT
 			|| type == CONFIG_PARAM_DOUBLE)
 			return 1;
+		break;
 	}
 	return 0;
 }
@@ -2029,13 +2031,11 @@ int blts_config_declare_variable_test_dynamic(char* name, tagged_arg_handler_fn 
 {
 	struct symbol_table_entry *sym;
 	int ret;
-	unsigned use_defaults = 0;
 
 	if (!name)
 		return -EINVAL;
 
 	if (!config_load_complete) {
-		use_defaults = 1;
 		setup_symbol_table_no_config(name);
 	}
 

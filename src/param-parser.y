@@ -452,6 +452,7 @@ globalnumericvalue: globalvalue 	{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							type = current_sym->value->type;
+							break;
 						default:
 							type = current_value_list_head->type;
 						}
@@ -473,6 +474,7 @@ globalvalue:	IDENT			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -484,6 +486,7 @@ intvalue:	INT			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -495,6 +498,7 @@ longvalue:	LONG			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -506,6 +510,7 @@ boolvalue:	BOOL			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -517,6 +522,7 @@ floatvalue:	FLOAT			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -528,6 +534,7 @@ doublevalue:	DOUBLE			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}
@@ -539,6 +546,7 @@ stringvalue:	STRING			{
 						switch (current_sym->type) {
 						case SYM_TYPE_BOXED_VALUE:
 							current_sym->value = val;
+							break;
 						default:
 							value_list_prepend_boxed(val);
 						}

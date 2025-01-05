@@ -492,7 +492,7 @@ static void list_all_variants_for_testcase(blts_cli_testcase *testcase,
 		temp_var = test_variants;
 		test_variants = test_variants->next;
 		while ((temp_var->values = blts_config_boxed_value_free(temp_var->values)));
-			free(temp_var);
+		free(temp_var);
 	}
 
 	while(variant_param_names)
