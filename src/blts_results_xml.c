@@ -20,6 +20,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <errno.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <libxml/parser.h>
@@ -40,7 +41,7 @@ static xmlChar *make_string_xml_safe(const char *str)
 	if (!doc || !str)
 		return NULL;
 
-	return xmlEncodeEntitiesReentrant(doc, str);
+	return xmlEncodeEntitiesReentrant(doc, BAD_CAST str);
 }
 
 int xml_result_open(const char *filename, const char *suite, const char *set,
@@ -175,7 +176,7 @@ int xml_result_write_step(int expected_result, int return_code, time_t *start,
 		if (!tmp)
 			return -1;
 		if (xmlTextWriterWriteAttribute(writer, BAD_CAST "failure_info",
-			failure_info) < 0) {
+			BAD_CAST failure_info) < 0) {
 			xmlFree(tmp);
 			return -1;
 		}

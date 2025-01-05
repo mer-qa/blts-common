@@ -26,10 +26,10 @@ This package contains libbltscommon1 development files
 %build
 ./autogen.sh
 %configure
-make
+%make_build
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 rm $RPM_BUILD_ROOT%{_libdir}/*.la
 rm $RPM_BUILD_ROOT%{_libdir}/*.a
 mkdir -p $RPM_BUILD_ROOT/var/log/tests/blts/
@@ -39,13 +39,11 @@ mkdir -p $RPM_BUILD_ROOT/var/log/tests/blts/
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %attr(1777,root,root) /var/log/tests/blts
 %license COPYING
 %{_libdir}/*.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %license COPYING
 %doc README README.ParameterVariation
 %{_libdir}/*.so

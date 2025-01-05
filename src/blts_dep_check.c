@@ -244,7 +244,7 @@ static int check_bin(char* name, int loglevel)
 	int found=0;
 	for(int i=0; valid_exe_dirs[i]; ++i)
 	{
-		if (valid_exe_dirs[0] != '\0' && *name != '/')
+		if (valid_exe_dirs[i][0] != '\0' && *name != '/')
                 {
 			dirname=valid_exe_dirs[i];
 			if(asprintf(&fullpath,"%s/%s",dirname,name)<0)
